@@ -47,7 +47,10 @@ struct HikeGraph: View {
                         range: observation[keyPath: path],
                         overallRange: overallRange)
                         .colorMultiply(color)
+                        .transition(.slide)
+                        .animation(.ripple(index: index))
                 }
+                
                 .offset(x: 0, y: proxy.size.height * heightRatio)
             }
         }
